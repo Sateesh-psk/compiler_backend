@@ -38,7 +38,7 @@ export const saveFile = async (req,res) => {
 export const allFiles = async (req,res) => {
   try{
     const userId = req.user._id;
-    const files = await codeModel.find({userId}).select(['title','language']);
+    const files = await codeModel.find({userId}).select(['title','language','createdAt','updatedAt']);
     res.status(201).json(files);
   }catch(err){
     console.log("Error in all files controller",err);
