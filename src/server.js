@@ -7,7 +7,7 @@ import { connectDB } from "./config/db.js";
 import userRoutes from "./routes/user.routes.js";
 import codeRoutes from "./routes/code.routes.js";
 import executeRoutes from "./routes/execution.routes.js";
-import spotifyAuth from "./routes/spotify.routes.js";
+import spotifyAuthRoutes from "./routes/spotifyAuth.routes.js";
 
 dotenv.config()
 
@@ -23,7 +23,7 @@ app.use(cors({
 app.use("/user",userRoutes)
 app.use("/code",codeRoutes)
 app.use("/execute",executeRoutes)
-app.use('/spotify', spotifyAuth);
+app.use('/spotify', spotifyAuthRoutes);
 
 const PORT = process.env.PORT
 app.listen(PORT,()=>{
