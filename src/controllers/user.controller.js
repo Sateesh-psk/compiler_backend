@@ -40,7 +40,7 @@ export const initiateSignup = async (req, res) => {
       { expiresIn: "15m" }
     );
 
-    const link = `http://localhost:5173/verify-email/${token}`;
+    const link = `${process.env.REDIRECT_FRONTEND_LINK}/verify-email/${token}`;
 
     // ✨ Get access token from refresh token
     const accessToken = await oauth2Client.getAccessToken();
